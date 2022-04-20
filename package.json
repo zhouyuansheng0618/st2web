@@ -58,6 +58,7 @@
     "."
   ],
   "dependencies": {
+
     "@stackstorm/app-actions": "^2.4.3",
     "@stackstorm/app-code": "^2.4.3",
     "@stackstorm/app-history": "^2.4.3",

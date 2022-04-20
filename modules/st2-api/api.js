@@ -60,7 +60,39 @@ export class API {
       return {};
     }
   }
+  setServer(server, remember) {
+    const { token, url, api=url, stream } = server || {};
+    let { auth } = server || {};
 
+    if (auth === true) {
+      auth = api;
+    }
+
+    if (api) {
+      this.server = {
+        api: localize(api),
+        auth: localize(auth),
+        stream: stream && localize(stream),
+        token: !_.isEmpty(token) ? token : undefined,
+      };
+    }
+    else {
+      this.server = {
+        api: `${window.location.protocol || 'https:'}//${window.location.host}/api`,
+        auth: `${window.location.protocol || 'https:'}//${window.location.host}/auth`,
+        stream: `${window.location.protocol || 'https:'}//${window.location.host}/stream`,
+        token: !_.isEmpty(token) ? token : null,
+      };
+    }
+
+    window.name = `st2web+${this.server.api}`;
+
+    if (remember) {
+      localStorage.setItem('st2Session', JSON.stringify({
+        server: this.server,
+      }));
+    }
+  }
   async connect(server, username, password, remember) {
     const { token, url, api=url, stream } = server || {};
     let { auth } = server || {};
@@ -100,6 +132,7 @@ export class API {
           // You need to define data field for axios to set content-type header
           data: null,
         });
+
 
         if (res.status !== 201) {
           throw {
@@ -190,7 +223,6 @@ export class API {
       method,
       url: this.route(opts),
       params: query,
-      headers,
       transformResponse: [ function transformResponse(data, headers) {
         if (typeof data === 'string' && headers['content-type'] === 'application/json') {
           try {
@@ -204,6 +236,7 @@ export class API {
         return data;
       } ],
       data,
+      headers: {'X-Requested-With': 'XMLHttpRequest'},
       withCredentials: true,
       paramsSerializer: params => {
         params = _.mapValues(params, param => {

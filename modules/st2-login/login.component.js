@@ -161,10 +161,13 @@ export default class Login extends React.Component {
       server,
       servers,
     };
+    api.setServer(server, true);
+
   }
 
   docsLink = 'https://docs.stackstorm.com/'
   supportLink = 'https://github.com/StackStorm/st2/discussions'
+  adfs = 'https://stscn.lenovo.com/adfs/ls/IdpInitiatedSignOn.aspx?loginToRp=IT-Automation-Platform'
 
   connect(e) {
     e.preventDefault();
@@ -184,6 +187,13 @@ export default class Login extends React.Component {
 
     return (
       <div {...props} className={cx(style.component, className)}>
+        <div style={{'border-right-style': 'dotted','height':'220px','width': '100px'}}>
+          <LoginRow style={style} >
+            <a style={{'margin-top':'90px'}} className={cx('st2-forms__button', style.button)} target="_self" rel="noopener noreferrer" href={this.adfs}>
+              ITCODE
+            </a>
+          </LoginRow>
+        </div>
         <LoginForm data-test="login" onSubmit={(e) => this.connect(e)} style={style} >
           <LoginLogo style={style} />
 
@@ -254,6 +264,7 @@ export default class Login extends React.Component {
               </span>
             </label>
           </LoginRow>
+          
 
           <LoginBottomRow style={style} >
             <a target="_blank" rel="noopener noreferrer" href={this.docsLink}>

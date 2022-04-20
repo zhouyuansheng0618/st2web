@@ -13,19 +13,11 @@
 
   align-items: center;
   justify-content: center;
-
-  a,
-  a:link,
-  a:active,
-  a:visited,
-  a:hover {
-    color: var(--gray-light);
-  }
-
   .field {
     background-color: #F6F6F9;
   }
 }
+
 
 .logo {
   display: block;

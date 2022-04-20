@@ -41,6 +41,7 @@ const routes = [
   Rules,
   Inquiry,
   Workflows,
+
 ];
 
 window.fp = require('lodash/fp');
