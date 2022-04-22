@@ -167,7 +167,7 @@ export default class Login extends React.Component {
 
   docsLink = 'https://docs.stackstorm.com/'
   supportLink = 'https://github.com/StackStorm/st2/discussions'
-  adfs = 'https://stscn.lenovo.com/adfs/ls/IdpInitiatedSignOn.aspx?loginToRp=IT-Automation-Platform'
+  adfs = 'https://stscn.lenovo.com/adfs/ls/IdpInitiatedSignOn.aspx?loginToRp=ITAutomationPlatformDev'
 
   connect(e) {
     e.preventDefault();

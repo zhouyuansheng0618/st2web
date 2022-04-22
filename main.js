@@ -31,7 +31,7 @@ import Packs from '@stackstorm/app-packs';
 import Rules from '@stackstorm/app-rules';
 import Inquiry from '@stackstorm/app-inquiry';
 import Workflows from '@stackstorm/app-workflows';
-
+import Keyvalue from '@stackstorm/app-keyvalue';
 const routes = [
   Actions,
   Code,
@@ -41,7 +41,7 @@ const routes = [
   Rules,
   Inquiry,
   Workflows,
-
+  Keyvalue,
 ];
 
 window.fp = require('lodash/fp');
