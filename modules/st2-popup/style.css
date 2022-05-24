@@ -1,0 +1,42 @@
+@import "@stackstorm/st2-style/colors.css";
+
+.component {
+  font-family: Roboto, sans-serif;
+
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  cursor: pointer;
+
+  background-color: rgba(0, 0, 0, .8);
+
+  .st2-panel__scroller {
+    padding: 10px 0 10px 10px;
+  }
+
+  .st2-details__panel {
+    padding-left: 0;
+  }
+}
+
+.details {
+  height: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  padding-right: 0;
+
+  cursor: default;
+
+  background-color: var(--grey-lighten-5);
+
+  width: initial;
+}
+
+.title {
+  font-size: 24px;
+  padding: 20px 20px 0;
+}

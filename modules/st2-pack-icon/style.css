@@ -1,0 +1,69 @@
+:root {
+  --size: 32px;
+  --sizesm: 24px;
+}
+
+.component {
+  position: relative;
+
+  display: inline-block;
+
+  width: var(--size);
+  height: var(--size);
+
+  vertical-align: middle;
+
+  border: 5px solid #fff;
+  border-radius: 5px;
+  background: #fff;
+
+  &:after {
+    font-family: "brocadeicons";
+    font-size: var(--size);
+    line-height: 1;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: var(--size);
+    height: var(--size);
+
+    content: "\e94d";
+    text-align: center;
+
+    color: #000;
+  }
+}
+
+.small {
+  width: var(--sizesm);
+  height: var(--sizesm);
+
+  border: 4px solid #fff;
+
+  &:after {
+    font-size: var(--sizesm);
+
+    top: 0;
+
+    width: var(--sizesm);
+    height: var(--sizesm);
+  }
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+
+  width: var(--size);
+  height: var(--size);
+
+  background: #fff;
+  box-shadow: 0 0 0 3px white;
+
+  &-small {
+    width: var(--sizesm);
+    height: var(--sizesm);
+  }
+}

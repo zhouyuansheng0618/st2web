@@ -1,0 +1,72 @@
+{
+  "name": "@stackstorm/app-rules",
+  "version": "2.4.3",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackstorm/st2web.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/stackstorm/st2web/issues"
+  },
+  "homepage": "https://github.com/stackstorm/st2web#readme",
+  "browserify": {
+    "transform": [
+      "babelify",
+      [
+        "@stackstorm/browserify-postcss",
+        {
+          "extensions": [
+            ".css"
+          ],
+          "inject": "insert-css",
+          "modularize": false,
+          "plugin": [
+            "postcss-import",
+            "postcss-nested",
+            [
+              "postcss-preset-env",
+              {
+                "features": {
+                  "custom-properties": {
+                    "preserve": false
+                  }
+                }
+              }
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@stackstorm/module-api": "^2.4.3",
+    "@stackstorm/module-auto-form": "^2.4.5",
+    "@stackstorm/module-criteria": "^2.4.3",
+    "@stackstorm/module-flex-table": "^2.4.3",
+    "@stackstorm/module-forms": "^2.4.3",
+    "@stackstorm/module-highlight": "^2.4.3",
+    "@stackstorm/module-label": "^2.4.3",
+    "@stackstorm/module-menu": "^2.4.3",
+    "@stackstorm/module-notification": "^2.4.3",
+    "@stackstorm/module-pack-icon": "^2.4.3",
+    "@stackstorm/module-panel": "^2.4.3",
+    "@stackstorm/module-popup": "^2.4.3",
+    "@stackstorm/module-remote-form": "^2.4.3",
+    "@stackstorm/module-router": "^2.4.3",
+    "@stackstorm/module-store": "^2.4.3",
+    "@stackstorm/module-time": "^2.4.3",
+    "@stackstorm/module-title": "^2.4.3",
+    "classnames": "^2.2.6",
+    "lodash": "4.17.21",
+    "prop-types": "15.7.2",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-redux": "7.0.2"
+  }
+}

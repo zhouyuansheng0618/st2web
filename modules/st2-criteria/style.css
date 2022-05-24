@@ -1,0 +1,65 @@
+@import "@stackstorm/st2-style/colors.css";
+
+.component {
+}
+
+.line {
+  /* Combobox suggestion box takes all the space of the next prlatively positioned element. */
+  /* In this case we want it to be as wide as the whole criteria. */
+  position: relative;
+
+  display: flex;
+
+  word-spacing: 3px;
+
+  flex-wrap: wrap;
+
+  &:after {
+    display: block;
+
+    width: 100%;
+    margin-top: -10px; /* TODO: find a better way */
+
+    content: "and";
+    text-align: center;
+  }
+
+  &:last-child {
+    margin-bottom: -12px;
+
+    &:after {
+      content: "";
+    }
+  }
+}
+
+.entity {
+  display: block;
+  flex: 1;
+
+  margin-right: 4px;
+
+  vertical-align: top;
+}
+
+.remove {
+  margin-bottom: 10px;
+
+  cursor: pointer;
+
+  align-self: center;
+
+  &:hover {
+    color: var(--aqua-base);
+  }
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.flat .entity {
+  display: inline-block;
+
+  flex: initial;
+}

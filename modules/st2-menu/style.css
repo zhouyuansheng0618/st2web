@@ -1,0 +1,199 @@
+@import "@stackstorm/st2-style/colors.css";
+
+.component {
+  font-family: Roboto,sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  padding-left: 50px;
+
+  user-select: none;
+  letter-spacing: .04em;
+
+  color: var(--gray-2);
+  background-color: white;
+
+  align-items: center;
+
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.logo {
+  /* We need to specify it here so the logo on login screen would match the menu one */
+  font-size: 16px;
+  font-family: Roboto,sans-serif;
+  display: flex;
+
+  min-width: 200px;
+  height: 52px;
+  margin: 10px;
+
+  text-decoration: none;
+
+  color: transparent;
+  background-image: url(../img/logo.svg);
+  background-repeat: no-repeat;
+  background-size: 153px;
+
+  align-items: flex-end;
+
+  &:after {
+    content: "Event-driven automation";
+    white-space: nowrap;
+    color: var(--gray-2);
+  }
+}
+
+/* TODO: Remove this ugliness */
+.spacer {
+  flex: 1;
+}
+
+.nav {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.nav-item {
+  font-size: 10px;
+
+  display: block;
+
+  min-width: 35px;
+  height: 72px;
+  padding: 0 16px;
+
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: inherit;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: rgba(0,0,0,.1);
+  }
+
+  i {
+    font-size: 20px;
+    line-height: 35px;
+
+    display: block;
+
+    width: 35px;
+    height: 35px;
+    margin: 8px auto;
+
+    border-radius: 50%;
+  }
+
+  &-active i {
+    background-color: var(--selected);
+    color: white;
+  }
+}
+
+.side {
+  position: relative;
+
+  padding: 10px;
+  font-size: 10px;
+
+  cursor: pointer;
+  white-space: nowrap;
+  text-transform: uppercase;
+
+  color: inherit;
+  text-decoration: none;
+
+
+  &-item {
+    position: relative;
+
+    font-size: 12px;
+
+    height: 40px;
+    padding: 0 10px;
+    margin-left: 0.25em;
+
+    text-transform: lowercase;
+
+    cursor: pointer;
+    user-select: text;
+    user-select: none;
+    white-space: nowrap;
+
+    color: inherit;
+
+
+    i {
+      font-size: 15px;
+      font-weight: normal;
+
+      vertical-align: text-top;
+    }
+
+    input {
+      display: none;
+    }
+
+    .icon-user {
+      margin-left: 0.25em;
+    }
+  }
+
+  &-dropdown {
+    font-size: 14px;
+    font-weight: normal;
+
+    position: absolute;
+    z-index: 1;
+    right: 0;
+
+    display: none;
+
+    color: black;
+    background-color: white;
+
+    &-backdrop {
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    &-item {
+      line-height: 2em;
+
+      position: relative;
+      z-index: 11;
+
+      padding: 0 10px;
+
+      &:hover {
+        background-color: var(--yellow-lighten-5);
+      }
+    }
+  }
+
+  &-item input[type=checkbox]:checked ~ &-dropdown {
+    display: block;
+  }
+}

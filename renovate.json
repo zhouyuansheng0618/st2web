@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "config:base",
+    ":pinVersions"
+  ],
+  "pathRules": [
+    {
+      "paths": ["modules/*/package.json", "apps/*/packages.json"],
+      "extends": [":pinOnlyDevDependencies"]
+    }
+  ],
+  "supportPolicy": ["lts_latest"]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@stackstorm/module-select-on-click",
+  "version": "2.4.3",
+  "description": "",
+  "main": "select-on-click.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackstorm/st2web.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/stackstorm/st2web/issues"
+  },
+  "homepage": "https://github.com/stackstorm/st2web#readme",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "sinon": "7.3.2"
+  }
+}

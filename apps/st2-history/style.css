@@ -1,0 +1,167 @@
+@import "@stackstorm/st2-style/colors.css";
+
+.st2-history {
+  /* Table columns */
+  .st2-flex-table__column&__column {
+    &-utility {
+      font-size: 10px;
+
+      position: relative;
+
+      flex: none;
+
+      width: 30px;
+
+      i {
+        position: absolute;
+        top: 50%;
+
+        height: 14px;
+        margin-top: -7px;
+      }
+    }
+    &-meta {
+      flex: 0 90px;
+
+      padding-top: 2px;
+    }
+    &-action {
+      flex: 3 90px;
+    }
+    &-triggered {
+      flex: 2 90px;
+    }
+  }
+
+  &__column-action-name,
+  &__column-rule-name,
+  &__column-trigger-type,
+  &__column-user-name,
+  &__column-app-name {
+    font-weight: bold;
+    line-height: normal;
+
+    display: block;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+
+  &__column-trigger-type,
+  &__column-user-name,
+  &__column-app-name {
+    font-weight: normal;
+  }
+  &__column-app-name,
+  &__column-rule-name {
+    padding-top: 1px;
+  }
+
+  &__column-action-params {
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 15px;
+
+    display: inline-block;
+    overflow: hidden;
+
+    max-width: 100%;
+
+    text-overflow: ellipsis;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__column-action-param {
+    display: inline-block;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &:not(:last-child):after {
+      content: ", ";
+    }
+  }
+
+  &__column-meta-status {
+    word-spacing: 10px;
+  }
+
+  &__column-user-name {
+    &:before {
+      font-family: "brocadeicons";
+      font-weight: bold;
+      font-style: normal;
+
+      width: 100%;
+      margin-right: 0.25em;
+
+      content: "\e94f";
+    }
+  }
+
+  &-child {
+    position: relative;
+
+    min-height: 20px;
+
+    border-bottom: 1px solid var(--grey-lighten-3);
+    border-left: 5px solid #0076C6;
+
+    & & {
+      border: 0;
+
+    }
+
+    & .st2-flex-card__column {
+      border: 0;
+    }
+
+    & .st2-flex-card {
+      margin-left: 26px;
+    }
+
+    & .st2-flex-card--expanded .st2-flex-card__row {
+      box-shadow: none;
+      border: 0;
+    }
+
+    & & .st2-flex-card {
+      margin-left: 52px;
+    }
+
+    & & & .st2-flex-card .st2-flex-card__expand,
+    & .st2-flex-card& .st2-flex-card--active .st2-flex-card__expand {
+      /* padding-left: 15px; */
+    }
+
+    & .st2-flex-card& & .st2-flex-card--active .st2-flex-card__expand {
+      /* padding-left: 10px; */
+    }
+  }
+
+  &__uuid {
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    line-height: 20px;
+  
+    display: inline-block;
+  
+    padding: 1px 10px 0;
+  
+    color: white;
+    border: none;
+    border-radius: 4px;
+    outline: 0;
+    background: #151a1e;
+  }
+
+  &__live-link:any-link {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #888;
+  }
+}

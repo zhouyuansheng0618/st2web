@@ -1,0 +1,40 @@
+{
+  "name": "@stackstorm/module-api",
+  "version": "2.4.3",
+  "description": "",
+  "main": "api.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackstorm/st2web.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/stackstorm/st2web/issues"
+  },
+  "homepage": "https://github.com/stackstorm/st2web#readme",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "lodash": "4.17.21",
+    "moxios": "^0.4.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  },
+  "devDependencies": {
+    "@stackstorm/module-test-utils": "2.4.3",
+    "chai": "^4.2.0"
+  }
+}

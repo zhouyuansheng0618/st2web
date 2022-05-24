@@ -1,0 +1,30 @@
+@import "@stackstorm/st2-style/colors.css";
+
+.component {
+  position: relative;
+}
+
+.hostname {
+  font-size: 15px;
+
+  margin: 5px 0;
+}
+
+.source {
+  font-size: 13px;
+
+  position: absolute;
+  right: 0;
+
+  display: inline-block;
+
+  padding: 3px 5px;
+
+  text-transform: lowercase;
+
+  color: var(--grey-base);
+}
+
+.source + .highlight {
+  margin-bottom: 5px;
+}

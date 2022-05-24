@@ -1,0 +1,75 @@
+@import "@stackstorm/st2-style/colors.css";
+
+.component {
+  .st2-panel__scroller {
+    padding: 30px;
+  }
+}
+
+.welled .well {
+  min-height: 20px;
+  padding: 4px;
+
+  color: black;
+  border-radius: 4px;
+  background-color: var(--grey-lighten-4);
+
+  pre {
+    font-family: "Droid Sans Mono", monospace;
+    font-size: 12px;
+
+    display: block;
+    overflow: scroll;
+
+    margin: 0;
+    padding: 15px;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 3px;
+      background-color: rgba(150, 150, 150, .3);
+
+      &:hover {
+        background-color: rgba(150, 150, 150, .7);
+      }
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: transparent;
+    }
+  }
+
+  code {
+    font-family: inherit;
+    font-size: inherit;
+  }
+}
+
+.buttons {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+a.more:any-link {
+  display: block;
+
+  cursor: pointer;
+  text-decoration: underline;
+
+  color: #888;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.buttons.input-active {
+  background-color: #ff9e1b;
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>StackStorm Web UI</title>
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- buils:styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endbuild -->
+
+  <script type="text/javascript">
+    window.angular = {
+      module: (module) => ({
+        constant: (constant, value) => {
+          if (module !== 'main') {
+            throw new Error('The st2web angular-config-polyfill only supports the "main" module.');
+          }
+
+          if (constant !== 'st2Config' && constant !== 'st2PackageMeta') {
+            throw new Error('The st2web angular-config-polyfill only supports the "st2Config" and "st2PackageMeta" constant.');
+          }
+
+          window.st2constants = window.st2constants || {};
+
+          if (constant === 'st2Config') {
+            window.st2constants.st2Config = value;
+          }
+          else if (constant === 'st2PackageMeta') {
+            window.st2constants.st2PackageMeta = value;
+          }
+        },
+        run: (fn) => {
+          if (module !== 'main') {
+            throw new Error('The st2web angular-config-polyfill only supports the "main" module.');
+          }
+
+          window.st2constants = window.st2constants || {};
+          window.st2constants.st2Config = window.st2constants.st2Config || {};
+          window.st2constants.st2PackageMeta = window.st2constants.st2PackageMeta || {};
+
+          fn(window.st2constants.st2Config);
+        },
+      }),
+    };
+  </script>
+</head>
+
+<body>
+  <div class="wrapper" id="container"></div>
+  <script src="config.js"></script>
+  <script src="package.meta.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
